@@ -1,0 +1,9 @@
+after_success:
+  - tar cvfz utilities.tar.gz .*.sh kubernetes/
+
+deploy:
+  provider: releases
+  file: utilities.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
