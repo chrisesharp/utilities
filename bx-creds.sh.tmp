@@ -1,0 +1,19 @@
+if [ -z $API_ENDPOINT ]
+then
+  echo "Using default API_ENDPOINT"
+  API_ENDPOINT=tbd
+fi
+
+if [ -z $BX_USERNAME ]
+then
+  echo "Using default username & password for account $BX_ACCOUNT"
+  BX_USERNAME=tbd
+  BX_PASSWORD=tbd
+  BX_ACCOUNT=tbd
+fi
+
+if [ -z $BX_CLUSTER ]
+then
+  echo "Using default cluster"
+  BX_CLUSTER=tbd
+fi
