@@ -3,6 +3,16 @@
 ##
 # This script will setup the CLI to use IBM Cloud Private without a time limit.
 ##
+if [ -e "~/icp-creds.sh" ];
+then
+  echo "Sourcing credentials from ~/icp-creds.sh"
+  source ~/icp-creds.sh
+else if [ -e "icp-creds.sh" ];
+  then
+    echo "Sourcing credentials from icp-creds.sh"
+    source icp-creds.sh
+  fi
+fi
 
 if [ -z $icp_secure_port ]
 then
