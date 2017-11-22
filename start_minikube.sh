@@ -2,17 +2,12 @@
 
 pushd $( dirname "${BASH_SOURCE[0]}" )
 echo "Starting minikube..."
-if [ $1 -eq "with-istio"]
-then
 minikube start \
     --extra-config=apiserver.Admission.PluginNames="Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,GenericAdmissionWebhook,ResourceQuota" \
     --kubernetes-version=v1.7.5 \
     --insecure-registry "192.168.99.100:32767" \
     --cpus 2 \
     --memory 8192
-else
-minikube start --insecure-registry "192.168.99.100:32767" 
-fi
 
 sleep 3
 
