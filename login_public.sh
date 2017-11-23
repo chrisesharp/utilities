@@ -1,9 +1,9 @@
 #!/bin/bash
 # Use bx-creds.sh from home directory as a first option for source
-if [ -e "~/bx-creds.sh" ];
+if [ -e "$HOME/bx-creds.sh" ];
 then
   echo "Sourcing credentials from ~/bx-creds.sh"
-  source ~/bx-creds.sh
+  source $HOME/bx-creds.sh
 else if [ -e "bx-creds.sh" ];
   then
     echo "Sourcing credentials from bx-creds.sh"
